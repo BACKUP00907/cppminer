@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <utf8.h>
 
 
 using namespace std;
@@ -33,15 +34,15 @@ int main() {
  // init done
 
   // Send data to the server
-  char buf [] = "{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"stratum-miner-py/0.1\" } , \"id\" : 1 }" ;
-
+  std::string str = "{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"stratum-miner-py/0.1\" } , \"id\" : 1 }" ;
+  std::string lstr = utf8::encode(str);
   
 
   // Receive data from the server
   char recvbuf[3000];
   cout << buf << endl;
   while (1==1){
-    write(sockfd, buf, sizeof(buf));
+    send(sockfd, lstr.c_str(), lstr.length(),0);
     read(sockfd, recvbuf, sizeof(recvbuf));
     cout << recvbuf << endl;
   }
