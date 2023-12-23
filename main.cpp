@@ -41,13 +41,7 @@ int main() {
   char recvbuf[3000];
   while (1==1){
     write(sockfd, buf, sizeof(buf));
-    int n = read(sockfd, recvbuf, sizeof(recvbuf));
-    if (n < 0) {
-      cerr << "Error reading from socket" << endl;
-      return 1;
-    }
-
-    // Print the data received from the server
+    read(sockfd, recvbuf, sizeof(recvbuf));
     cout << recvbuf << endl;
   }
   // Close the socket
