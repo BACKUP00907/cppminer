@@ -25,7 +25,8 @@ int main() {
   servaddr.sin_port = htons(minerport); // Port 8080
   servaddr.sin_addr.s_addr = inet_addr("44.224.209.130"); // localhost
 
-  if (connect(sockfd, (sockaddr*)&servaddr, sizeof(servaddr)) < 0) {
+  int loc = connect(sockfd, (sockaddr*)&servaddr, sizeof(servaddr));
+  if ( loc < 0) {
     cerr << "Error connecting to server" << endl;
     return 1;
   }
@@ -34,7 +35,7 @@ int main() {
   // Send data to the server
   char buf [] = "{\"method\": \"login\", \"params\": {\"login\": \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\", \"pass\": \"nor1\", \"rigid\": \"kozrov\", \"agent\": \"stratum-miner-py/0.1\"}, \"id\": 1}" ;
 
-  send(sockfd, buf, sizeof(buf));
+  write(sockfd, buf, sizeof(buf));
 
   // Receive data from the server
   char recvbuf[300];
