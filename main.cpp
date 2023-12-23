@@ -42,6 +42,7 @@ int main(int argc, char const* argv[])
 	while(1==1){
 	  valread = read(client_fd, buffer,3000 ); // subtract 1 for the null terminator at the end
 	  printf("%s\n", buffer);
+    memset(buffer, 0, sizeof(buffer));
   }
 	// closing the connected socket
 	close(client_fd);
