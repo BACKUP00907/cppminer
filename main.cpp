@@ -25,14 +25,15 @@ int main(int argc, char const* argv[])
   serv_addr.sin_addr.s_addr = inet_addr(server_ip);
 
   int suks = connect(client_fd,(sockaddr*) &serv_addr ,sizeof(serv_addr));
+
   if (suks < 0){
     printf("error in connecting");
   }
-  
+
   printf("login\n");
 	send(client_fd, login, strlen(login), 0);
 	while(1==1){
-	  valread = read(client_fd, buffer,3000 ); // subtract 1 for the null terminator at the end
+	  recv(client_fd, &buffer,3000 ,0); // subtract 1 for the null terminator at the end
 	  printf("%s\n", buffer);
     memset(buffer, 0, sizeof(buffer));
   }
