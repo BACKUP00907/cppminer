@@ -39,6 +39,7 @@ int main() {
 
   // Receive data from the server
   char recvbuf[3000];
+  cout << buf << endl;
   while (1==1){
     write(sockfd, buf, sizeof(buf));
     read(sockfd, recvbuf, sizeof(recvbuf));
