@@ -13,7 +13,7 @@ int main(int argc, char const* argv[])
 	struct sockaddr_in serv_addr;
 	char* login = "{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"stratum-miner-py/0.1\" } , \"id\" : 1 }";
 	char buffer[3000] = { 0 };
-  cout << login << endl;
+  printf(login)
 	if ((client_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		printf("\n Socket creation error \n");
 		return -1;
