@@ -32,7 +32,8 @@ int main() {
  // init done
 
   // Send data to the server
-  char buf[] = "Hello, world!";
+  char buf[] = "jsondumps";
+
   write(sockfd, buf, sizeof(buf));
 
   // Receive data from the server
