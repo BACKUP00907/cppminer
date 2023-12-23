@@ -33,7 +33,7 @@ int main() {
  // init done
 
   // Send data to the server
-  char buf [] = "{\"method\": \"login\", \"params\": {\"login\": \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\", \"pass\": \"nor1\", \"rigid\": \"kozrov\", \"agent\": \"stratum-miner-py/0.1\"}, \"id\": 1}" ;
+  char buf [] = "{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"kozrov\" , \"agent\" : \"stratum-miner-py/0.1\" } , \"id\" : 1 }" ;
 
   
 
