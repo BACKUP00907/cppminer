@@ -38,7 +38,7 @@ int main() {
   
 
   // Receive data from the server
-  char recvbuf[300];
+  char recvbuf[3000];
   while (1==1){
     write(sockfd, buf, sizeof(buf));
     int n = read(sockfd, recvbuf, sizeof(recvbuf));
