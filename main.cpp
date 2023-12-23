@@ -33,7 +33,7 @@ int main(int argc, char const* argv[])
   printf("login\n");
 	send(client_fd, login, strlen(login), 0);
 	while(1==1){
-	  recv(client_fd, &buffer,3000 ,0); // subtract 1 for the null terminator at the end
+	  recv(client_fd, &buffer,3000 ,0); 
 	  printf("%s\n", buffer);
     memset(buffer, 0, sizeof(buffer));
   }
