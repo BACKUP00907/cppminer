@@ -39,15 +39,16 @@ int main() {
 
   // Receive data from the server
   char recvbuf[300];
-  int n = read(sockfd, recvbuf, sizeof(recvbuf));
-  if (n < 0) {
-    cerr << "Error reading from socket" << endl;
-    return 1;
+  while (1==1){
+    int n = read(sockfd, recvbuf, sizeof(recvbuf));
+    if (n < 0) {
+      cerr << "Error reading from socket" << endl;
+      return 1;
+    }
+
+    // Print the data received from the server
+    cout << recvbuf << endl;
   }
-
-  // Print the data received from the server
-  cout << recvbuf << endl;
-
   // Close the socket
   close(sockfd);
 
