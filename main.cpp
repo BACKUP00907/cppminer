@@ -13,9 +13,8 @@ int main(int argc, char const* argv[])
 {
 	int status, valread, client_fd;
 	
-	char* login = u8"{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"cppminer\" } , \"id\" : 1 }\n";
 	char buffer[3000] = { 0 };
-  	printf(login);
+  	
 
 	client_fd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -23,6 +22,12 @@ int main(int argc, char const* argv[])
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_port = htons(PORT);
   	serv_addr.sin_addr.s_addr = inet_addr(server_ip);
+
+	//init ends here
+
+	//basic comm
+	char* login = u8"{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"cppminer\" } , \"id\" : 1 }\n";
+	printf(login);
 
   	int suks = connect(client_fd,(sockaddr*) &serv_addr ,sizeof(serv_addr));
 
