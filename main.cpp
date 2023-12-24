@@ -13,7 +13,7 @@ int main(int argc, char const* argv[])
 {
 	int status, valread, client_fd;
 	
-	char* login = u8"{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"cppminer\" } , \"id\" : 1 }";
+	char* login = u8"{ \'method\' : \'login\' , \'params\' : { \'login\' : \'49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\' , \'pass\' : \'nor1\' , \'rigid\' : \'\' , \'agent\' : \'cppminer\' } , \'id\' : 1 }";
 	char buffer[3000] = { 0 };
   printf(login);
 
