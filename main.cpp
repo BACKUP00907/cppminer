@@ -86,7 +86,7 @@ int nethandle(int sockl){
 	//response handler
   	rapidjson::Document respjson;
 	
-	assert(respjson.IsObject());
+	respjson.SetObject();
   	char recvbuffer[3000] = { 0 };
 	
 	send(sockl, login, strlen(login), 0);
