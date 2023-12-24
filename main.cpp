@@ -93,16 +93,15 @@ int nethandle(int sockl){
 	//response json handler
 
 	while(1==1){
-	  recv(sockl, &recvbuffer,3000 ,0); 
-	  printf("%s\n", recvbuffer);
-	  respjson.Parse(recvbuffer);
+	  	recv(sockl, &recvbuffer,3000 ,0); 
+	  	printf("%s\n", recvbuffer);
+	  	respjson.Parse(recvbuffer);
 
-	  //printf(respjson["method"].GetString());
-	  printf("json rpc %s\n" , respjson["jsonrpc"].GetString());
+	  	respjson["jsonrpc"].GetString());
 	
 
 
-      memset(recvbuffer, 0, sizeof(recvbuffer));
+      	memset(recvbuffer, 0, sizeof(recvbuffer));
     }
 	// closing the connected socket
 	close(sockl);
