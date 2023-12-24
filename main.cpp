@@ -40,6 +40,7 @@ int main(int argc, char const* argv[])
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
 
 	Value jsonparams(kObjectType);
+	printf("domsm");
 	jsonparams.AddMember("login", Value(wallet, loginjson.GetAllocator()), loginjson.GetAllocator());
 	jsonparams.AddMember("pass", Value(workername, loginjson.GetAllocator()), loginjson.GetAllocator());
 	jsonparams.AddMember("rigid", Value(rigid, loginjson.GetAllocator()), loginjson.GetAllocator());
