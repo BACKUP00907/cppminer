@@ -86,7 +86,6 @@ int nethandle(int sockl){
 	//response handler
   	rapidjson::Document respjson;
 	
-	
   	char recvbuffer[3000] = { 0 };
 	
 	send(sockl, login, strlen(login), 0);
@@ -97,9 +96,10 @@ int nethandle(int sockl){
 	  recv(sockl, &recvbuffer,3000 ,0); 
 	  printf("%s\n", recvbuffer);
 	  respjson.Parse(recvbuffer);
-	  printf("method ",respjson["method"].GetString());
-	  printf("json rpc  ",respjson["jsonrpc"].GetString());
 
+	  //printf("method ",respjson["method"].GetString());
+	  //printf("json rpc  ",respjson["jsonrpc"].GetString());
+	
 
 
       memset(recvbuffer, 0, sizeof(recvbuffer));
