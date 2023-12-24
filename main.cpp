@@ -35,6 +35,7 @@ int main(int argc, char const* argv[])
 	//init ends here
 
 	//basic json 
+	printf("domsmk");
 	rapidjson::Document loginjson;
 	printf("domsm");
 	loginjson.AddMember("method", "login", loginjson.GetAllocator());
