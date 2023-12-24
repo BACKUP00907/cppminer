@@ -41,7 +41,7 @@ int main(int argc, char const* argv[])
 	Value y;
 	y =StringRef("login");
 	loginjson.AddMember("method", y, loginjson.GetAllocator());
-	printf("done");
+	
 	std::cout << "rashyet" << std::endl;
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
 	std::cout <<"fsdf"<< std::endl ;
