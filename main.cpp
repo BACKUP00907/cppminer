@@ -13,10 +13,10 @@
 using namespace rapidjson;
 
 char* server_ip = "44.224.209.130" ;
-char* wallet ="49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g";
-char* workername ="cpp";
-char* rigid ="kor";
-char* agent ="cccpminer";
+char* wallet = u8"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g";
+char* workername = u8"cpp";
+char* rigid = u8"kor";
+char* agent = u8"cccpminer";
 
 int main(int argc, char const* argv[])
 {
@@ -35,14 +35,14 @@ int main(int argc, char const* argv[])
 	//init ends here
 
 	//basic json 
-	printf("domsmk");
+	
 	rapidjson::Document loginjson;
-	printf("domsm");
+	
 	loginjson.AddMember("method", "login", loginjson.GetAllocator());
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
-	printf("domsm1");
+	
 	Value jsonparams(kObjectType);
-	printf("domsm2");
+	
 	jsonparams.AddMember("login", Value(wallet, loginjson.GetAllocator()), loginjson.GetAllocator());
 	jsonparams.AddMember("pass", Value(workername, loginjson.GetAllocator()), loginjson.GetAllocator());
 	jsonparams.AddMember("rigid", Value(rigid, loginjson.GetAllocator()), loginjson.GetAllocator());
