@@ -54,7 +54,7 @@ int main(int argc, char const* argv[])
 
 
 	//char* login = u8"{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"cppminer\" } , \"id\" : 1 }\n";
-	char* login = ulog.c_str();
+	char* login = (char*)ulog.c_str();
 	printf(login);
 	//basic json ends
 	//basic comm
