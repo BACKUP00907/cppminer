@@ -19,6 +19,10 @@ char* workername = u8"cpp";
 char* rigid = u8"kor";
 char* agent = u8"cccpminer";
 
+//function templetes
+int nethandle(int sockl);
+//end
+
 int main(int argc, char const* argv[])
 {
 	int status, valread, clientsock;
