@@ -85,8 +85,8 @@ int nethandle(int sockl){
 	//basic json ends
 	//response handler
   	rapidjson::Document respjson;
-	respjson.SetObject();
-
+	
+	assert(respjson.IsObject());
   	char recvbuffer[3000] = { 0 };
 	
 	send(sockl, login, strlen(login), 0);
