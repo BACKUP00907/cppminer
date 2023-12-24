@@ -6,10 +6,17 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include "rapidjson/document.h"
+#include "rapidjson/writer.h"
 
 #define PORT 10002
 
+using namespace rapidjson;
+
 char* server_ip = "44.224.209.130" ;
+char* wallet ="49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g";
+char* workername ="cpp";
+char* rigid ="kor";
+char* agent ="cccpminer";
 
 int main(int argc, char const* argv[])
 {
@@ -31,8 +38,23 @@ int main(int argc, char const* argv[])
 	rapidjson::Document loginjson;
 	loginjson.AddMember("method", "login", loginjson.GetAllocator());
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
-	
-	char* login = u8"{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"cppminer\" } , \"id\" : 1 }\n";
+
+	Value jsonparams(kObjectType);
+	jsonparams.AddMember("login", Value(wallet, loginjson.GetAllocator()), loginjson.GetAllocator());
+	jsonparams.AddMember("pass", Value(workername, loginjson.GetAllocator()), loginjson.GetAllocator());
+	jsonparams.AddMember("rigid", Value(rigid, loginjson.GetAllocator()), loginjson.GetAllocator());
+	jsonparams.AddMember("agent", Value(agent, loginjson.GetAllocator()), loginjson.GetAllocator());
+
+	loginjson.AddMember("params", jsonparams, loginjson.GetAllocator());
+
+	StringBuffer zbuffer;
+  	Writer<StringBuffer> writer(zbuffer);
+  	loginjson.Accept(writer);
+	std::string ulog = zbuffer.GetString();
+
+
+	//char* login = u8"{ \"method\" : \"login\" , \"params\" : { \"login\" : \"49FrBm432j9fg33N8PrwSiSig7aTrxZ1wY4eELssmkmeESaYzk2fPkvfN7Kj4NHMfH11NuhUAcKc5DkP7jZQTvVGUnD243g\" , \"pass\" : \"nor1\" , \"rigid\" : \"\" , \"agent\" : \"cppminer\" } , \"id\" : 1 }\n";
+	char* login = ulog.c_str();
 	printf(login);
 	//basic json ends
 	//basic comm
