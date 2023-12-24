@@ -36,11 +36,12 @@ int main(int argc, char const* argv[])
 
 	//basic json 
 	rapidjson::Document loginjson;
+	printf("domsm");
 	loginjson.AddMember("method", "login", loginjson.GetAllocator());
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
-
+	printf("domsm1");
 	Value jsonparams(kObjectType);
-	printf("domsm");
+	printf("domsm2");
 	jsonparams.AddMember("login", Value(wallet, loginjson.GetAllocator()), loginjson.GetAllocator());
 	jsonparams.AddMember("pass", Value(workername, loginjson.GetAllocator()), loginjson.GetAllocator());
 	jsonparams.AddMember("rigid", Value(rigid, loginjson.GetAllocator()), loginjson.GetAllocator());
