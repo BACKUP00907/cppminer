@@ -84,15 +84,24 @@ int nethandle(int sockl){
 	
 	//basic json ends
 	//response handler
-  	
+  	rapidjson::Document respjson;
+
 
   	char recvbuffer[3000] = { 0 };
 	
 	send(sockl, login, strlen(login), 0);
 
+	//response json handler
+
 	while(1==1){
 	  recv(sockl, &recvbuffer,3000 ,0); 
 	  printf("%s\n", recvbuffer);
+	  respjson.Parse(recvbuffer);
+	  printf("method ",respjson["method"].GetString());
+	  printf("json rpc  ",respjson["jsonrpc"].GetString());
+
+
+
       memset(recvbuffer, 0, sizeof(recvbuffer));
     }
 	// closing the connected socket
