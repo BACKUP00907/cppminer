@@ -39,9 +39,8 @@ int main(int argc, char const* argv[])
 	
 	rapidjson::Document loginjson;
 	loginjson.SetObject();
-	Value y;
-	y =StringRef("login");
-	loginjson.AddMember("method", y, loginjson.GetAllocator());
+	
+	loginjson.AddMember("method", "login", loginjson.GetAllocator());
 	
 	std::cout << "rashyet" << std::endl;
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
