@@ -35,8 +35,8 @@ int main(int argc, char const* argv[])
 	while(1==1){
 	  recv(client_fd, &buffer,3000 ,0); 
 	  printf("%s\n", buffer);
-    memset(buffer, 0, sizeof(buffer));
-  }
+      memset(buffer, 0, sizeof(buffer));
+    }
 	// closing the connected socket
 	close(client_fd);
 	return 0;
