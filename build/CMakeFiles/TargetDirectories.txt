@@ -1,0 +1,3 @@
+/workspaces/cppminer/build/CMakeFiles/rebuild_cache.dir
+/workspaces/cppminer/build/CMakeFiles/edit_cache.dir
+/workspaces/cppminer/build/CMakeFiles/miner.dir

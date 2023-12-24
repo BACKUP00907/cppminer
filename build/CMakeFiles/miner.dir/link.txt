@@ -1,0 +1,1 @@
+/usr/bin/g++     -faggressive-loop-optimizations  -ftree-vectorize -ffast-math -Ofast   -funroll-loops -march=native -mtune=native  -g  -rdynamic CMakeFiles/miner.dir/main.cpp.o  -o miner 
