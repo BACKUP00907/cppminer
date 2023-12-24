@@ -92,12 +92,29 @@ int nethandle(int sockl){
 
 	//response json handler
 
+	Value resulti;
 	while(1==1){
 	  	recv(sockl, &recvbuffer,3000 ,0); 
 	  	printf("%s\n", recvbuffer);
 	  	respjson.Parse(recvbuffer);
 
-	  	respjson["jsonrpc"].GetString();
+	  	if (respjson["error"].IsNull() == false){
+				printf("error: %s \n", respjson["error"].GetString());
+		}
+
+		resulti = respjson["result"];
+
+		if(resulti.HasMember("status")){
+
+			printf("status: %s \n", resulti["status"].GetString());
+		
+		}
+
+		if(resulti.HasMember("job")){
+
+			printf("status: %s \n", resulti["status"].GetString());
+		
+		}
 	
 
 
