@@ -72,6 +72,7 @@ int main(int argc, char const* argv[])
   	}
 
   	printf("login\n");
+	strcat(login ,"\n");
 	send(client_fd, login, strlen(login), 0);
 
 	while(1==1){
