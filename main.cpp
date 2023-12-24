@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
-#include "rapidjson/stringbuilder.h"
 #include <iostream>
 
 #define PORT 10002
