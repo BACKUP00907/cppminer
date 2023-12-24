@@ -41,7 +41,7 @@ int main(int argc, char const* argv[])
 	
 	//loginjson.AddMember("method", "login", loginjson.GetAllocator());
 	std::cout << "rashyet" << std::endl;
-	loginjson.AddMember("id", 1, loginjson.GetAllocator());
+	//loginjson.AddMember("id", 1, loginjson.GetAllocator());
 	std::cout <<"fsdf"<< std::endl ;
 	Value jsonparams(kObjectType);
 	
