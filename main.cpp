@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
+#include <iostream>
 
 #define PORT 10002
 
@@ -40,7 +41,7 @@ int main(int argc, char const* argv[])
 	
 	loginjson.AddMember("method", u8"login", loginjson.GetAllocator());
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
-	
+	std::cout <<"fsdf"<< std::endl ;
 	Value jsonparams(kObjectType);
 	
 	jsonparams.AddMember("login", Value(wallet, loginjson.GetAllocator()), loginjson.GetAllocator());
