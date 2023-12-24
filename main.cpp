@@ -38,6 +38,7 @@ int main(int argc, char const* argv[])
 	//basic json 
 	
 	rapidjson::Document loginjson;
+	loginjson.SetObject();
 	Value y;
 	y =StringRef("login");
 	loginjson.AddMember("method", y, loginjson.GetAllocator());
