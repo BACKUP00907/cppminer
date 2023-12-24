@@ -40,6 +40,7 @@ int main(int argc, char const* argv[])
 	rapidjson::Document loginjson;
 	
 	loginjson.AddMember("method", "login", loginjson.GetAllocator());
+	std::cout << "rashyet" << std::endl;
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
 	std::cout <<"fsdf"<< std::endl ;
 	Value jsonparams(kObjectType);
