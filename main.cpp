@@ -98,7 +98,7 @@ int nethandle(int sockl){
 	  respjson.Parse(recvbuffer);
 
 	  //printf(respjson["method"].GetString());
-	  printf("json rpc  ",respjson["jsonrpc"].GetString());
+	  printf(respjson["jsonrpc"].GetString());
 	
 
 
