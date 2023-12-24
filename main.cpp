@@ -39,7 +39,7 @@ int main(int argc, char const* argv[])
 	
 	rapidjson::Document loginjson;
 	
-	loginjson.AddMember("method", u8"login", loginjson.GetAllocator());
+	loginjson.AddMember("method", "login", loginjson.GetAllocator());
 	loginjson.AddMember("id", 1, loginjson.GetAllocator());
 	std::cout <<"fsdf"<< std::endl ;
 	Value jsonparams(kObjectType);
