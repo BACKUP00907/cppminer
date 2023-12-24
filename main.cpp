@@ -48,7 +48,7 @@ int main(int argc, char const* argv[])
 	loginjson.AddMember("params", jsonparams, loginjson.GetAllocator());
 
 	StringBuffer zbuffer;
-  	Writer<StringBuffer> writer(zbuffer);
+  	Writer<StringBuffer>writer(zbuffer);
   	loginjson.Accept(writer);
 	std::string ulog = zbuffer.GetString();
 
