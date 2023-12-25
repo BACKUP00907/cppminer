@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
 #include <iostream>
 
 #define PORT 10002
@@ -85,7 +86,8 @@ int nethandle(int sockl){
 	//basic json ends
 	//response handler
   	rapidjson::Document respjson;
-	
+	respjson.SetObject();
+
   	char recvbuffer[3000] = { 0 };
 	
 	send(sockl, login, strlen(login), 0);
@@ -111,9 +113,12 @@ int nethandle(int sockl){
 		}
 
 		if(resulti.HasMember("job")){
+			char* sloginid = (char *) resulti["id"].GetString();
+			Value sjob = resulti["job"];
+			
 
-			printf("status: %s \n", resulti["status"].GetString());
-		
+
+
 		}
 	
 
