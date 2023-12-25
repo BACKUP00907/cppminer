@@ -114,8 +114,10 @@ int nethandle(int sockl){
 
 		if(resulti.HasMember("job")){
 			char* sloginid = (char *) resulti["id"].GetString();
-			Value sjob = resulti["job"];
-			
+			Value ljob ;
+			ljob = resulti["job"];
+			ljob.SetObject();
+			ljob.AddMember("login_id",sloginid);
 
 
 
